@@ -19,8 +19,8 @@
 ### 案例3：肝脏血管3D重建
 ![肝脏血管3D重建_3](imagesliver_vessel_3.png)
 
-### 案例3：肝脏血管3D重建
-![肝脏血管3D重建_4](imagesliver_vessel_4.webp)
+### 案例4：肝脏血管3D重建
+![肝脏血管3D重建_4](imagesliver_vessel_4.png)
 
 ## 技术细节
 - 纯手工标注，保证分割精度
