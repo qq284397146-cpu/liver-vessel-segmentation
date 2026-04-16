@@ -71,7 +71,8 @@
 <img src="Lung.png" width="80%">
 </p>
 
-> 📹 **视频演示**：[下载 360°旋转展示视频 (Lung3d.mp4)](Lung3d.mp4)
+>**视频演示**：[下载 360°旋转展示视频（Lung3d.mp4）](Lung3d.mp4)
+>![旋转预览](lung_preview.gif)
 
 ---
 
