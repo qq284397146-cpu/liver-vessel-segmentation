@@ -53,8 +53,7 @@
 
 ![胸部半自动分割](Lung.png)
 
-**视频演示**：  
-&lt;video src="Lung3d.mp4" controls width="100%"&gt;&lt;/video&gt;
+**视频演示**：[点击观看360°旋转展示 (Lung3d.mp4)](Lung3d.mp4)
 
 ---
 
