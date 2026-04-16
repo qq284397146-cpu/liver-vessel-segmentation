@@ -27,14 +27,14 @@
 - 🟡 肝脏实质（半透明外壳，显示轮廓与分叶）
 - 🟢🔵🔴 肝脏血管系统（多色区分不同血管束）
 
-![肝脏整体_视角1](images/liver_0.png)
-![肝脏整体_视角2](images/liver_1.png)
+![肝脏整体_视角1](imagesliver_full_0.png)
+![肝脏整体_视角2](imagesliver_full_1.png)
 
 **独立分离视图**（单一血管系统精细展示）：
 来自不同数据集的肝脏血管手工分离与提取，去除肝脏实质干扰，清晰展示血管树走行与分支结构。
 
-![肝脏血管分离_数据集A](images/liver_pv.png)
-![肝脏血管分离_数据集B](images/liver_hv.png)
+![肝脏血管分离_数据集A](imagesliver_pv.png)
+![肝脏血管分离_数据集B](imagesliver_hv.png)
 
 **耗时**：40-60分钟/例完成完整血管树标注与分离  
 **说明**：联合视图用于确认解剖位置关系，独立分离视图用于展示血管树细节，适用于教学演示或进一步分析。
@@ -51,10 +51,10 @@
 - 完成肺叶、肺血管、气管多结构提取
 - 对AI分割结果进行局部精细修正
 
-![胸部半自动分割](images/lung.png)
+![胸部半自动分割](Lung.png)
 
 **视频演示**：  
-&lt;video src="images/lung_demo.mp4" controls width="100%"&gt;&lt;/video&gt;
+&lt;video src="Lung3d.mp4" controls width="100%"&gt;&lt;/video&gt;
 
 ---
 
