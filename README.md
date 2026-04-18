@@ -84,7 +84,9 @@ Uploading SlicerCapture.mp4…
 
 **视频演示**：360°旋转展示
 
-<video src="https://github.com/user-attachments/assets/8636619f-9206-46d4-919e-e18f779ece8d" width="800" controls="controls"></video>
+**视频演示**：360°旋转展示
+
+![血管3D旋转演示](SlicerCapture.gif)
 
 ![旋转预览](lung_preview.gif)
 
