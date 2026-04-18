@@ -82,6 +82,14 @@ Uploading SlicerCapture.mp4…
 <img src="Lung.png" width="80%">
 </p>
 
+<p align="center">
+<img src="image_00003.png" width="80%">
+</p>
+
+<p align="center">
+<img src="image_00004.png" width="80%">
+</p>
+
 **视频演示**：360°旋转展示
 
 <p align="center">
