@@ -108,6 +108,7 @@
         ↓ 断点续传，已完成自动跳过
     转换报告.csv（每例状态 + 压缩前后大小）
 
+  
 **关键技术决策：**
 - 识别到 CSV 的 `S5cmdManifestPath` 列已记录精确路径，
   **放弃递归扫描**，直接定址，避免误识别 `metadata` 等非DICOM目录
@@ -121,7 +122,7 @@
 <img src="images/imagescase3_result.png" width="80%" alt="230/230转换完成截图">
 </p>
 
-> 脚本见：[`tools/dicom_to_nifti_batch.py`](tools/dicom_to_nifti_batch.py)
+>脚本见：[`tools/run_convert.py`](tools/run_convert.py)
 
 **`tools/run_convert.py` — 批量 DICOM 转 NIfTI（一键版）**
 
