@@ -1,3 +1,11 @@
+
+
+
+
+
+
+Uploading SlicerCapture.mp4…
+
 <div align="center">
 
 # 医学影像标注与数据处理实践
@@ -74,7 +82,9 @@
 <img src="Lung.png" width="80%">
 </p>
 
-**视频演示**：[下载 360°旋转展示视频（Lung3d.mp4）](Lung3d.mp4)
+**视频演示**：
+https://github.com/user-attachments/assets/8636619f-9206-46d4-919e-e18f779ece8d
+
 ![旋转预览](lung_preview.gif)
 
 ---
