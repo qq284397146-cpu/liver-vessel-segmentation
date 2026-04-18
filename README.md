@@ -27,10 +27,10 @@
 
 | 项目 | 内容 |
 |------|------|
-| **数据** | 腹部CT增强扫描（107层，门脉期） |
-| **完成内容** | 肝脏实质外壳 + 血管系统联合标注与独立分离 |
-| **耗时** | 40–60 分钟/例 |
-| **方式** | 纯手工精细标注 |
+| 数据 | 腹部CT增强扫描（107层，门脉期） |
+| 完成内容 | 肝脏实质外壳 + 血管系统联合标注与独立分离 |
+| 耗时 | 40–60 分钟/例 |
+| 方式 | 纯手工精细标注 |
 
 **图例：**
 - 🟫 肝脏实质（褐色半透明外壳，显示整体轮廓与分叶）
@@ -42,18 +42,18 @@
 **联合视图**（整体解剖关系）：
 
 <p align="center">
-<img src="images/imagesliver_full_0.png" width="48%">
-<img src="images/imagesliver_full_1.png" width="48%">
+<img src="imagesliver_full_0.png" width="48%">
+<img src="imagesliver_full_1.png" width="48%">
 </p>
 
 **独立分离视图**（去除肝脏实质，清晰展示血管树走行与分支）：
 
 <p align="center">
-<img src="images/imagesliver_pv.png" width="48%">
-<img src="images/imagesliver_hv.png" width="48%">
+<img src="imagesliver_pv.png" width="48%">
+<img src="imagesliver_hv.png" width="48%">
 </p>
 
-> 联合视图用于确认解剖位置关系，独立分离视图用于展示血管树细节，适用于教学演示或进一步分析。
+> 联合视图用于确认解剖位置关系，独立分离视图展示血管树细节，适用于教学演示或进一步分析。
 
 ---
 
@@ -61,9 +61,9 @@
 
 | 项目 | 内容 |
 |------|------|
-| **数据** | 胸部CT（PE增强扫描） |
-| **结构** | 肺叶（5叶）、肺动静脉、气管树 |
-| **流程** | TotalSegmentator CLI → 3D Slicer 导入 → 手工精修 → MRB 导出 |
+| 数据 | 胸部CT（PE增强扫描） |
+| 结构 | 肺叶（5叶）、肺动静脉、气管树 |
+| 流程 | TotalSegmentator CLI → 3D Slicer 导入 → 手工精修 → MRB 导出 |
 
 **技术要点：**
 - 命令行独立运行（非仅 GUI 操作），支持参数定制
@@ -71,19 +71,19 @@
 - 对 AI 分割结果进行局部精细修正后交付
 
 <p align="center">
-<img src="images/Lung.png" width="80%">
+<img src="Lung.png" width="80%">
 </p>
 
 <p align="center">
-<img src="images/image_00003.png" width="48%">
-<img src="images/image_00004.png" width="48%">
+<img src="image_00003.png" width="48%">
+<img src="image_00004.png" width="48%">
 </p>
 
 **360° 旋转演示：**
 
 <p align="center">
-  <img src="images/SlicerCapture.gif" width="48%" alt="肝脏血管3D旋转演示">
-  <img src="images/lung_preview.gif" width="48%" alt="肺部多结构3D旋转演示">
+  <img src="SlicerCapture.gif" width="48%" alt="肝脏血管3D旋转演示">
+  <img src="lung_preview.gif" width="48%" alt="肺部多结构3D旋转演示">
 </p>
 
 ---
@@ -92,11 +92,11 @@
 
 | 项目 | 内容 |
 |------|------|
-| **数据集** | StageII-Colorectal-CT（公开数据集，230例，6.80 GB） |
-| **输入** | DICOM（5层嵌套目录，UID命名子文件夹，切片无扩展名） |
-| **输出** | `.nii.gz` 压缩NIfTI，按 PatientID 平铺命名（001–230） |
-| **结果** | ✅ 230/230 成功，0 失败，耗时 **5分02秒** |
-| **输出总量** | 8.07 GB |
+| 数据集 | StageII-Colorectal-CT（公开数据集，230例，6.80 GB） |
+| 输入 | DICOM（5层嵌套目录，UID命名子文件夹，切片无扩展名） |
+| 输出 | `.nii.gz` 压缩NIfTI，按 PatientID 平铺命名（001–230） |
+| 结果 | ✅ 230/230 成功，0 失败，耗时 **5分02秒** |
+| 输出总量 | 8.07 GB |
 
 **工程方案流程：**
 
@@ -108,32 +108,18 @@
         ↓ 断点续传，已完成自动跳过
     转换报告.csv（每例状态 + 压缩前后大小）
 
-  
 **关键技术决策：**
-- 识别到 CSV 的 `S5cmdManifestPath` 列已记录精确路径，
-  **放弃递归扫描**，直接定址，避免误识别 `metadata` 等非DICOM目录
-- UID 风格文件夹名（`1.3.6.1.4.1...`）自动识别跳过，
-  输出文件名统一来自 `PatientID` 列
+- 识别到 CSV 的 `S5cmdManifestPath` 列已记录精确路径，**放弃递归扫描**，
+  直接定址，避免误识别 `metadata` 等非DICOM目录
+- UID 风格文件夹名（`1.3.6.1.4.1...`）自动识别跳过，输出文件名统一来自 `PatientID` 列
 - 全程 `dicom2nifti` + Python 标准库，依赖最小化
 
 **交付验证：**
 
 <p align="center">
-<img src="images/imagescase3_result.png" width="80%" alt="230/230转换完成截图">
+<img src="imagescase3_result.png" width="80%" alt="230/230转换完成截图">
 </p>
 
->脚本见：[`tools/run_convert.py`](tools/run_convert.py)
-
-**`tools/run_convert.py` — 批量 DICOM 转 NIfTI（一键版）**
-
-- **双击即可运行**，自动检测并安装所需依赖库（dicom2nifti、pydicom）
-- CSV 引导精确路径，无需递归扫描硬盘
-- 断点续传，已完成自动跳过
-- 生成转换报告 CSV（每例状态 + 压缩前后大小）
-
-已验证：230 例批量转换，**0 失败，耗时 5 分 02 秒**
-
-> 适用环境：Windows + Python 3.8+，无需提前手动安装任何库
 ---
 
 ## 工程实践（工作习惯）
@@ -146,10 +132,9 @@
 - 无扩展名 DICOM 文件的批量识别与解析
 
 **个人工作流：**
-1. **先试后做**：小数据跑完整流程验证环境，再正式批量处理，
-   避免在完整数据上踩环境问题
+1. **先试后做**：小数据跑完整流程验证环境，再正式批量处理
 2. **多AI分工**：Perplexity 起草、GPT 规划、Claude 执行代码与文档、
-   Gemini 图文分析、Kimi 读长文献、Grok 实时检索，各司其职
+   Gemini 图文分析、Kimi 读长文献、Grok 实时检索
 3. **批处理思维**：用 Python 脚本替代重复手工操作
 
 ---
@@ -157,18 +142,17 @@
 ## Python 数据处理工具
 
 **`tools/dicom_extractor.py` — DICOM 元数据提取器**
-
 - 自动识别无扩展名 DICOM 文件
 - 提取 PatientID、StudyDate、SliceThickness、Rows、Columns
 - 输出 CSV 报表供下游使用
-- 已验证：单次处理 107 层 CT 序列稳定运行
+- 已验证：107 层 CT 序列稳定运行
 
-**`tools/dicom_to_nifti_batch.py` — 批量 DICOM 转 NIfTI**
+**`tools/run_convert.py` — 批量 DICOM 转 NIfTI（一键版）**
+- **双击即可运行**，自动检测并安装所需依赖库（dicom2nifti、pydicom）
+- CSV 引导精确路径，断点续传，生成转换报告 CSV
+- 已验证：230 例批量转换，**0 失败，耗时 5 分 02 秒**
 
-- CSV 引导路径，无需递归扫描硬盘
-- 断点续传，已完成自动跳过
-- 生成转换报告 CSV
-- 已验证：230 例批量转换，0 失败
+> 适用环境：Windows + Python 3.8+，无需提前手动安装任何库
 
 ---
 
