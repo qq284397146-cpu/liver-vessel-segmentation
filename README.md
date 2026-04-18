@@ -42,15 +42,15 @@
 **联合视图**（整体解剖关系）：
 
 <p align="center">
-<img src="imagesliver_full_0.png" width="48%">
-<img src="imagesliver_full_1.png" width="48%">
+<img src="images/imagesliver_full_0.png" width="48%">
+<img src="images/imagesliver_full_1.png" width="48%">
 </p>
 
 **独立分离视图**（去除肝脏实质，清晰展示血管树走行与分支）：
 
 <p align="center">
-<img src="imagesliver_pv.png" width="48%">
-<img src="imagesliver_hv.png" width="48%">
+<img src="images/imagesliver_pv.png" width="48%">
+<img src="images/imagesliver_hv.png" width="48%">
 </p>
 
 > 联合视图用于确认解剖位置关系，独立分离视图展示血管树细节，适用于教学演示或进一步分析。
@@ -71,19 +71,19 @@
 - 对 AI 分割结果进行局部精细修正后交付
 
 <p align="center">
-<img src="Lung.png" width="80%">
+<img src="images/Lung.png" width="80%">
 </p>
 
 <p align="center">
-<img src="image_00003.png" width="48%">
-<img src="image_00004.png" width="48%">
+<img src="images/image_00003.png" width="48%">
+<img src="images/image_00004.png" width="48%">
 </p>
 
 **360° 旋转演示：**
 
 <p align="center">
-  <img src="SlicerCapture.gif" width="48%" alt="肝脏血管3D旋转演示">
-  <img src="lung_preview.gif" width="48%" alt="肺部多结构3D旋转演示">
+  <img src="images/SlicerCapture.gif" width="48%" alt="肝脏血管3D旋转演示">
+  <img src="images/lung_preview.gif" width="48%" alt="肺部多结构3D旋转演示">
 </p>
 
 ---
@@ -117,7 +117,7 @@
 **交付验证：**
 
 <p align="center">
-<img src="imagescase3_result.png" width="80%" alt="230/230转换完成截图">
+<img src="images/imagescase3_result.png" width="80%" alt="230/230转换完成截图">
 </p>
 
 ---
