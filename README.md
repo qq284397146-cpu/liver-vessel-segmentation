@@ -88,7 +88,10 @@ Uploading SlicerCapture.mp4…
   <img src="SlicerCapture.gif" width="80%" alt="血管3D旋转演示">
 </p>
 
-![旋转预览](lung_preview.gif)
+<p align="center">
+  <img src="lung_preview.gif" width="80%" alt="血管3D旋转演示">
+</p>
+
 
 ---
 
