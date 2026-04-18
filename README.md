@@ -123,6 +123,16 @@
 
 > 脚本见：[`tools/dicom_to_nifti_batch.py`](tools/dicom_to_nifti_batch.py)
 
+**`tools/run_convert.py` — 批量 DICOM 转 NIfTI（一键版）**
+
+- **双击即可运行**，自动检测并安装所需依赖库（dicom2nifti、pydicom）
+- CSV 引导精确路径，无需递归扫描硬盘
+- 断点续传，已完成自动跳过
+- 生成转换报告 CSV（每例状态 + 压缩前后大小）
+
+已验证：230 例批量转换，**0 失败，耗时 5 分 02 秒**
+
+> 适用环境：Windows + Python 3.8+，无需提前手动安装任何库
 ---
 
 ## 工程实践（工作习惯）
