@@ -42,15 +42,15 @@
 **联合视图**（整体解剖关系）：
 
 <p align="center">
-<img src="images/liver_full_0.png" width="48%">
-<img src="images/liver_full_1.png" width="48%">
+<img src="imagesliver_full_0.png" width="48%">
+<img src="imagesliver_full_1.png" width="48%">
 </p>
 
 **独立分离视图**（去除肝脏实质，清晰展示血管树走行与分支）：
 
 <p align="center">
-<img src="images/liver_pv.png" width="48%">
-<img src="images/liver_hv.png" width="48%">
+<img src="imagesliver_pv.png" width="48%">
+<img src="imagesliver_hv.png" width="48%">
 </p>
 
 > 联合视图用于确认解剖位置关系，独立分离视图用于展示血管树细节，适用于教学演示或进一步分析。
@@ -71,19 +71,19 @@
 - 对 AI 分割结果进行局部精细修正后交付
 
 <p align="center">
-<img src="images/Lung.png" width="80%">
+<img src="Lung.png" width="80%">
 </p>
 
 <p align="center">
-<img src="images/image_00003.png" width="48%">
-<img src="images/image_00004.png" width="48%">
+<img src="image_00003.png" width="48%">
+<img src="image_00004.png" width="48%">
 </p>
 
 **360° 旋转演示：**
 
 <p align="center">
-  <img src="images/SlicerCapture.gif" width="48%" alt="肝脏血管3D旋转演示">
-  <img src="images/lung_preview.gif" width="48%" alt="肺部多结构3D旋转演示">
+  <img src="SlicerCapture.gif" width="48%" alt="肝脏血管3D旋转演示">
+  <img src="lung_preview.gif" width="48%" alt="肺部多结构3D旋转演示">
 </p>
 
 ---
@@ -100,13 +100,13 @@
 
 **工程方案流程：**
 
-metadata.csv（S5cmdManifestPath 列）
-↓ 直接读取精确路径，无需递归扫描
-dicom2nifti.convert_directory()
-↓ 临时目录承接，自动处理 .nii → gzip
-{PatientID}.nii.gz 平铺输出
-↓ 断点续传，已完成自动跳过
-转换报告.csv（每例状态 + 压缩前后大小）
+    metadata.csv（S5cmdManifestPath 列）
+        ↓ 直接读取精确路径，无需递归扫描
+    dicom2nifti.convert_directory()
+        ↓ 临时目录承接，自动处理 .nii → gzip
+    {PatientID}.nii.gz 平铺输出
+        ↓ 断点续传，已完成自动跳过
+    转换报告.csv（每例状态 + 压缩前后大小）
 
 **关键技术决策：**
 - 识别到 CSV 的 `S5cmdManifestPath` 列已记录精确路径，
@@ -118,7 +118,7 @@ dicom2nifti.convert_directory()
 **交付验证：**
 
 <p align="center">
-<img src="images/case3_result.png" width="80%" alt="230/230转换完成截图">
+<img src="imagescase3_result.png" width="80%" alt="230/230转换完成截图">
 </p>
 
 > 脚本见：[`tools/dicom_to_nifti_batch.py`](tools/dicom_to_nifti_batch.py)
@@ -147,22 +147,17 @@ dicom2nifti.convert_directory()
 
 **`tools/dicom_extractor.py` — DICOM 元数据提取器**
 
-解决场景：医院导出的 DICOM 常无扩展名（纯数字命名），手工查看 107 层元数据效率低。
-
-功能：
 - 自动识别无扩展名 DICOM 文件
 - 提取 PatientID、StudyDate、SliceThickness、Rows、Columns
 - 输出 CSV 报表供下游使用
-
-已验证：单次处理 107 层 CT 序列稳定运行。
+- 已验证：单次处理 107 层 CT 序列稳定运行
 
 **`tools/dicom_to_nifti_batch.py` — 批量 DICOM 转 NIfTI**
 
 - CSV 引导路径，无需递归扫描硬盘
 - 断点续传，已完成自动跳过
 - 生成转换报告 CSV
-
-已验证：230 例批量转换，0 失败。
+- 已验证：230 例批量转换，0 失败
 
 ---
 
