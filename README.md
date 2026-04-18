@@ -84,9 +84,9 @@ Uploading SlicerCapture.mp4…
 
 **视频演示**：360°旋转展示
 
-**视频演示**：360°旋转展示
-
-![血管3D旋转演示](SlicerCapture.gif)
+<p align="center">
+  <img src="SlicerCapture.gif" width="80%" alt="血管3D旋转演示">
+</p>
 
 ![旋转预览](lung_preview.gif)
 
